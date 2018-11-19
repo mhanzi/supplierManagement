@@ -61,13 +61,15 @@
 		
 		
 		
-        <td> <a class="btn btn-success btn-sm" class="btn" href="<?php echo site_url('suppliers/add_supplier/'.$randomString.$sup['tbl_sup_id']);?>">Azioni fornitore </a>
-		Dettagli 
-Modifica
-Articoli
-Traduci
-Mostra / Nascondi
-Pubblica
+        <td> 
+		<!--<a class="btn btn-success btn-sm" class="btn" href="<?php //echo site_url('suppliers/add_supplier/'.$randomString.$sup['tbl_sup_id']);?>">Azioni fornitore </a>-->
+		<button type="button" class="btn">Azioni Articolo</button>  </br>
+             
+             	<a href="<?php echo site_url('suppliers/supplier_detail/'.$randomString.$sup['tbl_sup_id']);?>"><span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span> </a> </br>
+			<a href="<?php echo site_url('suppliers/edit_supplier/'.$randomString.$sup['tbl_sup_id']);?>">	<span class="glyphicon glyphicon-edit"> Modifica </span> </a> </br>
+				<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
+				<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
+				<span class="glyphicon glyphicon-globe"> Pubblica </span>
 		
 		
 		</td>

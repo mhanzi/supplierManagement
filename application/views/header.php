@@ -12,6 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo site_url('css/bootstrap.min.css');?>">
   <link rel="stylesheet" href="<?php echo site_url('css/customd.css');?>">
   <link rel="stylesheet" href="<?php echo site_url('css/font-awesome.min.css');?>">
+  
   <script src="<?php echo site_url('js/jquery.min.js');?>"></script>
   <script src="<?php echo site_url('js/bootstrap.min.js');?>"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

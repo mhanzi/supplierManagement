@@ -9,18 +9,18 @@ class db_model extends CI_Model
         $this->load->helper('date');
         
     }
-     public function getSupplierData()
+     public function getSuppliersData()
     {
         $this->db->select('*');
-        $query = $this->db->get('tbl_supplier_details');
+        $query = $this->db->get('tbl_suppliers_details');
 	
         return $query->result_array();
     }
 	
-	public function getSupplierDetails($id)
+	public function getSuppliersDetails($id)
 	{
 	 $this->db->select('*');
-        $this->db->from('tbl_supplier_details');
+        $this->db->from('tbl_suppliers_details');
         $this->db->where('tbl_sup_id', $id);
         $query = $this->db->get();
         if ($query->num_rows() >= 1) {
@@ -32,7 +32,32 @@ class db_model extends CI_Model
         }
     }
 	
+	public function getSupplierDetails($id)
+	{
+	 $this->db->select('*');
+        $this->db->from('tbl_suppliers_details');
+        $this->db->where('tbl_sup_id', $id);
+        $query = $this->db->get();
+        if ($query->num_rows() >= 1) {
+		print_r($query->result_array());
+        return $query->result_array();
 	
+        } else {
+            return false; 
+        }
+    }
+		public function get_seat_details()
+	{
+		$this->db->select('*');
+        $this->db->from('assign_seats');
+        $query = $this->db->get();
+        if ($query->num_rows() >= 1) {
+		   return $query->result_array();
+	
+        } else {
+            return false; 
+        }
+    }
 	
 	
 	public function get_images($img) {

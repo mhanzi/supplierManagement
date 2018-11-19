@@ -17,7 +17,7 @@ class suppliers extends CI_Controller {
 	{
 	 $session_user = $this->session->userdata('session_user');
 	  $this->load->view('header');
-	  $data['suppliers']=$this->db_model->getSupplierData();
+	  $data['suppliers']=$this->db_model->getSuppliersData();
 	 
 	  $this->load->view('home',$data);
 	  $this->load->view('footer');
@@ -29,10 +29,52 @@ class suppliers extends CI_Controller {
 	//add_supplier
         $agent= substr($var, 10);
         $data['id']=$agent;
-        $data['supplier']=$this->db_model->getSupplierDetails($agent);
+        $data['supplier']=$this->db_model->getSuppliersDetails($agent);
 
         $this->load->view('header');
         $this->load->view('add_supplier',$data);
+        $this->load->view('footer');
+		
+     
+    }
+	  public function edit_supplier($var)
+    { 
+	//edit supplier details
+        $agent= substr($var, 10);
+        $data['id']=$agent;
+        $data['supplier']=$this->db_model->getSuppliersDetails($agent);
+
+        $this->load->view('header');
+        $this->load->view('edit_supplier',$data);
+        $this->load->view('footer');
+		
+     
+    }
+	
+	public function assign_seats()
+    { 
+
+	//assign seats for the customers
+        
+        $data['seats']=$this->db_model->get_seat_details();
+
+        $this->load->view('header');
+        $this->load->view('assign_seats',$data);
+        $this->load->view('footer');
+		
+     
+    }
+	
+	   public function supplier_detail($var)
+    { 
+
+	//add_supplier
+        $agent= substr($var, 10);
+        $data['id']=$agent;
+        $data['supplier']=$this->db_model->getSupplierDetails($agent);
+
+        $this->load->view('header');
+        $this->load->view('supplier_detail',$data);
         $this->load->view('footer');
 		
      
