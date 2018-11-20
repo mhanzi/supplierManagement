@@ -35,28 +35,19 @@
       </tr>
     </thead>
     <tbody>
+	<?php 
+	
+	foreach($supDetail as $supp){ ?>
       <tr>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td><button type="button" class="btn">Azioni Articolo</button></td>
-      </tr>
-      
-      <tr>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td>aaaaaaaaa</td>
-        <td><button type="button" class="btn">Azioni Articolo</button>  </br>
+        <td>	<?php echo $supp['sup_tipologie'];?></td>
+        <td><?php echo $supp['sup_descrizione'];?></td>
+        <td><?php echo $supp['sup_inizio'];?></td>
+        <td><?php echo $supp['sup_fine'];?></td>
+        <td><?php echo $supp['sup_listino'];?></td>
+        <td><?php echo $supp['sup_sconto'];?></td>
+        <td></td>
+        <td><?php echo $supp['sup_stato'];?></td>
+              <td><button type="button" class="btn">Azioni Articolo</button>  </br>
              
              	<span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span>  </br>
 				<span class="glyphicon glyphicon-edit"> Modifica </span>  </br>
@@ -64,6 +55,7 @@
 				<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
 				<span class="glyphicon glyphicon-globe"> Pubblica </span>
       </tr>
+	  <?php } ?>
     </tbody>
         </td>
   </table>
