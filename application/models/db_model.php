@@ -19,27 +19,27 @@ class db_model extends CI_Model
 	
 	public function getSuppliersDetails($id)
 	{
-	 $this->db->select('*');
+	    $this->db->select('*');
         $this->db->from('tbl_suppliers_details');
         $this->db->where('tbl_sup_id', $id);
         $query = $this->db->get();
         if ($query->num_rows() >= 1) {
-		print_r($query->result_array());
+		
         return $query->result_array();
 	
         } else {
             return false; 
         }
     }
-	
+
 	public function getSupplierDetails($id)
 	{
-	 $this->db->select('*');
+	    $this->db->select('*');
         $this->db->from('supplier_detail');
         $this->db->where('detail_id', $id);
         $query = $this->db->get();
         if ($query->num_rows() >= 1) {
-		print_r($query->result_array());
+		
         return $query->result_array();
 	
         } else {

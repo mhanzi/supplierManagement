@@ -1,3 +1,15 @@
+<script>
+ 	function viewButtonList(){
+		
+		var elem = document.getElementById('idList');
+		
+			if(elem.style.display == '')
+				elem.style.display = 'none'; // hide
+			else
+				elem.style.display = '';
+		
+		}
+ </script>
 <div align="center" class="container">
 <h3><span class="label label-default">Fornitori >> Lista Fornitori >> Lista Articoli Fornitore</span></h3>
 
@@ -47,13 +59,14 @@
         <td><?php echo $supp['sup_sconto'];?></td>
         <td></td>
         <td><?php echo $supp['sup_stato'];?></td>
-              <td><button type="button" class="btn">Azioni Articolo</button>  </br>
-             
-             	<span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span>  </br>
-				<span class="glyphicon glyphicon-edit"> Modifica </span>  </br>
-				<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
-				<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
-				<span class="glyphicon glyphicon-globe"> Pubblica </span>
+              <td><button type="button" name="viewButton" id="viewButton" class="btn" onclick="viewButtonList()"> VIEW </button></br>
+       <div id="idList" style="display:none">
+                <span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span>  </br>
+		<span class="glyphicon glyphicon-edit"> Modifica </span>  </br>
+		<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
+		<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
+		<span class="glyphicon glyphicon-globe"> Pubblica </span>
+      </div>
       </tr>
 	  <?php } ?>
     </tbody>
@@ -63,3 +76,4 @@
      
      
 </div>
+
