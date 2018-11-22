@@ -62,15 +62,16 @@
 		
 		
         <td> 
-		<!--<a class="btn btn-success btn-sm" class="btn" href="<?php //echo site_url('suppliers/add_supplier/'.$randomString.$sup['tbl_sup_id']);?>">Azioni fornitore </a>-->
-		<button type="button" class="btn">Azioni Articolo</button>  </br>
-             
-             	<a href="<?php echo site_url('suppliers/supplier_detail/'.$randomString.$sup['tbl_sup_id']);?>"><span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span> </a> </br>
-			<a href="<?php echo site_url('suppliers/edit_supplier/'.$randomString.$sup['tbl_sup_id']);?>">	<span class="glyphicon glyphicon-edit"> Modifica </span> </a> </br>
-				<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
-				<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
-				<span class="glyphicon glyphicon-globe"> Pubblica </span>
-		
+				
+		<button type="button" name="viewButton" id="viewButton" class="btn" onclick="viewButtonList()"> Azioni Articolo </button></br>
+       <div id="idList" style="display:none">
+               <a href="<?php echo site_url('suppliers/supplier_detail/'.$randomString.$sup['tbl_sup_id']);?>"> <span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span></a>  </br>
+		<a href="<?php echo site_url('suppliers/edit_supplier/'.$randomString.$sup['tbl_sup_id']);?>"><span class="glyphicon glyphicon-edit"> Modifica </span></a>  </br>
+		<span class="glyphicon glyphicon-retweet"> Articoli </span>  </br>
+			<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
+		<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
+		<span class="glyphicon glyphicon-globe"> Pubblica </span>
+      </div>
 		
 		</td>
       </tr>
@@ -81,3 +82,15 @@
      
      
 </div>
+<script>
+ 	function viewButtonList(){
+		
+		var elem = document.getElementById('idList');
+		
+			if(elem.style.display == '')
+				elem.style.display = 'none'; // hide
+			else
+				elem.style.display = '';
+		
+		}
+ </script>
