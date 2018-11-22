@@ -39,7 +39,7 @@ class db_model extends CI_Model
         $this->db->where('detail_id', $id);
         $query = $this->db->get();
         if ($query->num_rows() >= 1) {
-		
+
         return $query->result_array();
 	
         } else {

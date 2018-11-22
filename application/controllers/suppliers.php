@@ -66,4 +66,18 @@ class suppliers extends CI_Controller {
         $this->load->view('supplier_detail',$data);
         $this->load->view('footer');
 	}
+	//modific articolo
+	public function modific_articolo($var)
+	{
+	   $agent= substr($var, 10);
+       $data['id']=$agent;
+	   $session_user = $this->session->userdata('session_user');
+	   $this->load->view('header');
+	   $data['article']=$this->db_model->getSupplierDetails($agent);
+	   $this->load->view('modific_articolo',$data);
+	   $this->load->view('footer');
+	}
+
+	
+	
  }

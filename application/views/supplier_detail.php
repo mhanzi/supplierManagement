@@ -59,9 +59,15 @@
         <td><?php echo $supp['sup_sconto'];?></td>
         <td></td>
         <td><?php echo $supp['sup_stato'];?></td>
-              <td><button type="button" name="viewButton" id="viewButton" class="btn" onclick="viewButtonList()"> VIEW </button></br>
+		<?php  $length = 10;
+
+            $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length); ?>
+		
+		
+		
+              <td><button type="button" name="viewButton" id="viewButton" class="btn" onclick="viewButtonList()">  Azioni Articolo  </button></br>
        <div id="idList" style="display:none">
-                <span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span>  </br>
+                  <a href="<?php echo site_url('suppliers/modific_articolo/'.$randomString.$supp['detail_id']);?>">    <span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span></a>  </br>
 		<span class="glyphicon glyphicon-edit"> Modifica </span>  </br>
 		<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
 		<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
