@@ -63,8 +63,8 @@
 		
         <td> 
 				
-		<button type="button" name="viewButton" id="viewButton" class="btn" onclick="viewButtonList()"> Azioni Articolo </button></br>
-       <div id="idList" style="display:none">
+		<button type="button" name="<?php echo $sup['tbl_sup_id'];?>" id="viewButton<?php echo $sup['tbl_sup_id'];?>"  class="btn" onclick="viewButtonList(this.name)"> Azioni Articolo </button></br>
+       <div id="idList<?php echo $sup['tbl_sup_id'];?>" style="display:none">
                <a href="<?php echo site_url('suppliers/supplier_detail/'.$randomString.$sup['tbl_sup_id']);?>"> <span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span></a>  </br>
 		<a href="<?php echo site_url('suppliers/edit_supplier/'.$randomString.$sup['tbl_sup_id']);?>"><span class="glyphicon glyphicon-edit"> Modifica </span></a>  </br>
 		<span class="glyphicon glyphicon-retweet"> Articoli </span>  </br>
@@ -83,9 +83,9 @@
      
 </div>
 <script>
- 	function viewButtonList(){
+ 	function viewButtonList(e){
 		
-		var elem = document.getElementById('idList');
+		var elem = document.getElementById('idList'+e);
 		
 			if(elem.style.display == '')
 				elem.style.display = 'none'; // hide
@@ -93,4 +93,6 @@
 				elem.style.display = '';
 		
 		}
+		
+		
  </script>
