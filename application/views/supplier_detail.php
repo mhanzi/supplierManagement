@@ -65,8 +65,8 @@
 		
 		
 		
-              <td><button type="button" name="viewButton" id="viewButton" class="btn" onclick="viewButtonList()">  Azioni Articolo  </button></br>
-       <div id="idList" style="display:none">
+              <td><button type="button" name="<?php echo $supp['detail_id'];?>" id="viewButton" class="btn" onclick="viewButtonLists(this.name)">  Azioni Articolo  </button></br>
+       <div id="idList<?php echo $supp['detail_id'];?>" style="display:none">
                   <a href="<?php echo site_url('suppliers/modific_articolo/'.$randomString.$supp['detail_id']);?>">    <span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span></a>  </br>
 		<span class="glyphicon glyphicon-edit"> Modifica </span>  </br>
 		<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
@@ -83,3 +83,19 @@
      
 </div>
 
+<script>
+
+function viewButtonLists(e){
+		
+		var elem = document.getElementById('idList'+e);
+		
+			if(elem.style.display == '')
+				elem.style.display = 'none'; // hide
+			else
+				elem.style.display = '';
+		
+		}
+
+		
+		
+ </script>

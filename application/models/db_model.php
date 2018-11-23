@@ -36,10 +36,10 @@ class db_model extends CI_Model
 	{
 	    $this->db->select('*');
         $this->db->from('supplier_detail');
-        $this->db->where('detail_id', $id);
+        $this->db->where('supplier_id', $id);
         $query = $this->db->get();
         if ($query->num_rows() >= 1) {
-
+//print_r( $query->result_array());
         return $query->result_array();
 	
         } else {
