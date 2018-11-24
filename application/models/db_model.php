@@ -31,6 +31,20 @@ class db_model extends CI_Model
             return false; 
         }
     }
+	public function getallDetails($id)
+	{
+	    $this->db->select('*');
+        $this->db->from('supplier_detail');
+        $this->db->where('detail_id', $id);
+        $query = $this->db->get();
+        if ($query->num_rows() >= 1) {
+//print_r( $query->result_array());
+        return $query->result_array();
+	
+        } else {
+            return false; 
+        }
+    }
 
 	public function getSupplierDetails($id)
 	{

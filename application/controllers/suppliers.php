@@ -84,7 +84,7 @@ class suppliers extends CI_Controller {
        $data['id']=$agent;
 	   $session_user = $this->session->userdata('session_user');
 	   $this->load->view('header');
-	   $data['article']=$this->db_model->getSupplierDetails($agent);
+	   $data['details']=$this->db_model->getallDetails($agent);
 	   $this->load->view('modific_articolo_temp',$data);
 	   $this->load->view('footer');
 	}
