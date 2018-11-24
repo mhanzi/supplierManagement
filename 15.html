@@ -5,16 +5,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Evento</title>
 
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/customd.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
-
 
 </head>
+
+<script>
+    function showDiv() {
+        var x = document.getElementById("showbutton");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
 <!-- #region Navigation -->
 
 <body>
@@ -62,27 +73,52 @@
     <!--#endregion-->
 
     <div align="center" class="container">
-            <h4>
-                    <span class="label label-default">Partecipanti >> Lista Partecipanti</span>
-                </h4>
+        <h4>
+            <span class="label label-default">Partecipanti >> Lista Partecipanti</span>
+        </h4>
         <h3>
             <span class="label label-default">Evento 1</span>
         </h3>
         <br>
-        
+
         <br>
+        <!-- #region Check Box -->
         <div>
             <table class="table table-responsive" style="max-width:40%;">
                 <thead>
                     <tr>
-                            <td style="vertical-align:middle; text-align: right">Reali</td>
-                            <td><input type="checkbox" class="form-control" id="chkReali" ></td>
-                            <td style="vertical-align:middle; text-align: right">Simualti</td>
-                            <td><input type="checkbox" class="form-control" id="chkSimalti" ></td>
-                    </tr>                    
+                        <td class="checkbox" style="text-align: right">
+                            Reali
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    <span class="cr">
+                                        <i class="cr-icon glyphicon glyphicon-ok"></i>
+                                    </span>
+                                </label>
+                            </div>
+                        </td>
+                        <td class="checkbox" style="text-align: right">
+                            Simualti
+                        </td>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    <span class="cr">
+                                        <i class="cr-icon glyphicon glyphicon-ok"></i>
+                                    </span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
                 </thead>
             </table>
         </div>
+        <!--#endregion-->
+
         <div class="table-responsive">
             <table class="contact-table table table-curved table-responsive">
                 <thead>
@@ -102,22 +138,19 @@
                         <td>Colombo</td>
                         <td>Loredana</td>
                         <td>50</td>
-                        <td>60</td>
-                        <td>50</td>
-                        <td><button type="button" class="btn">Azioni Partecipanti</button></td>
+                        <td>test@test.com</td>
+                        <td>4521885-66</td>
+                        <td>
+                            <button type="button" class="darkButton" onclick="showDiv()">Azioni Partecipanti</button>
+
+                            <div id="showbutton" style="display: none; padding: 15px;">
+                                <span class="fa fa-edit" style="font-size:24px" aria-hidden="true"></span>&nbsp; Modifica
+                                <br>
+                                <span class="fa fa-trash-o" style="font-size:24px" aria-hidden="true"></span>&nbsp; Elimina
+                            </div>
+                        </td>
                     </tr>
 
-                    <tr>
-                        <td>Alessio</td>
-                        <td>Speranza</td>
-                        <td>Loredana</td>
-                        <td>44</td>
-                        <td>66</td>
-                        <td>50</td>
-                        <td><button type="button" class="btn">Azioni Partecipanti</button></br>
-                            <span class="glyphicon glyphicon-edit">Modifica</span>  </br>
-                            <span class="glyphicon glyphicon-delete"> Elmina </span>  </br></td>
-                    </tr>
                 </tbody>
                 </td>
             </table>
