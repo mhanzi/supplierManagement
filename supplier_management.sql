@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2018 at 02:07 PM
+-- Generation Time: Nov 24, 2018 at 10:50 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -58,15 +58,31 @@ CREATE TABLE `supplier_detail` (
   `sup_sconto` varchar(100) NOT NULL,
   `sup_stato` varchar(50) NOT NULL,
   `sup_added_by` int(11) NOT NULL,
-  `sup_added_on` datetime NOT NULL
+  `sup_added_on` datetime NOT NULL,
+  `immagine` int(11) NOT NULL,
+  `numero_posti` int(11) NOT NULL,
+  `dimensioni_h` int(11) NOT NULL,
+  `dimensioni_w` int(11) NOT NULL,
+  `article_img` int(11) NOT NULL,
+  `url_details` varchar(50) NOT NULL,
+  `quantita_primi` int(11) NOT NULL,
+  `quantita_secondi` int(11) NOT NULL,
+  `quantita_contorni` int(11) NOT NULL,
+  `quantita_dolci` int(11) NOT NULL,
+  `frutta` tinyint(1) NOT NULL COMMENT 'yes - 1 No -0',
+  `bevande` int(11) NOT NULL COMMENT 'yes - 1 No -0',
+  `min_Prezzo` int(11) NOT NULL,
+  `max_Prezzo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `supplier_detail`
 --
 
-INSERT INTO `supplier_detail` (`detail_id`, `supplier_id`, `sup_tipologie`, `sup_descrizione`, `sup_inizio`, `sup_fine`, `sup_listino`, `sup_sconto`, `sup_stato`, `sup_added_by`, `sup_added_on`) VALUES
-(1, 1, 'Taucil', 'disponsible', '2018-11-08', '2018-11-19', '$ 40 ', '10%', 'Attivo', 0, '0000-00-00 00:00:00');
+INSERT INTO `supplier_detail` (`detail_id`, `supplier_id`, `sup_tipologie`, `sup_descrizione`, `sup_inizio`, `sup_fine`, `sup_listino`, `sup_sconto`, `sup_stato`, `sup_added_by`, `sup_added_on`, `immagine`, `numero_posti`, `dimensioni_h`, `dimensioni_w`, `article_img`, `url_details`, `quantita_primi`, `quantita_secondi`, `quantita_contorni`, `quantita_dolci`, `frutta`, `bevande`, `min_Prezzo`, `max_Prezzo`) VALUES
+(1, 1, 'Taucil', 'disponsible', '2018-11-08', '2018-11-19', '$ 40 ', '10%', 'Attivo', 0, '0000-00-00 00:00:00', 4, 22, 45, 33, 3, 'modific_articolo', 0, 0, 0, 0, 0, 0, 0, 0),
+(2, 1, 'menu_fisso', 'menu fisso a scelta tra 2 pirmi 2 sec', '0000-00-00', '0000-00-00', '', '', '', 0, '0000-00-00 00:00:00', 4, 0, 0, 0, 3, 'modific_articolo_temp', 0, 0, 0, 0, 0, 1, 0, 0),
+(3, 1, 'Buffet', 'Disponsibili vari', '0000-00-00', '0000-00-00', '', '', '', 0, '0000-00-00 00:00:00', 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -85,7 +101,9 @@ CREATE TABLE `tbl_file_uploader` (
 
 INSERT INTO `tbl_file_uploader` (`file_id`, `file_name`) VALUES
 (1, '1.jpg'),
-(2, '35_5.JPG');
+(2, '35_5.JPG'),
+(3, 'tavolvo.JPG'),
+(4, 'tavolvo2.JPG');
 
 -- --------------------------------------------------------
 
@@ -237,13 +255,13 @@ ALTER TABLE `assign_seats`
 -- AUTO_INCREMENT for table `supplier_detail`
 --
 ALTER TABLE `supplier_detail`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_file_uploader`
 --
 ALTER TABLE `tbl_file_uploader`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_suppliers_details`
