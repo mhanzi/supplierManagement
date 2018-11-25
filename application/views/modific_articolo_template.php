@@ -39,7 +39,7 @@
 		<?php $x=$details[0]['dimensioni_h'];
 		$y=$details[0]['dimensioni_w'];
 			$dimen=$x* $y; ?>
-        <td><input type="text"  class="form-control bdred" id="dimen" value="<?php echo $dimen;?>" name="dimen"> m <sup>2</sup> </td>
+        <td><input type="text"  style="width:80%" class="bdred" id="dimen" value="<?php echo $dimen;?>" name="dimen"> m <sup>2</sup> </td>
       </tr>
       <tr>
 	     <td colspan="2" align="center"> 

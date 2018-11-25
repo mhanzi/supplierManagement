@@ -98,7 +98,24 @@ class suppliers extends CI_Controller {
 	   $this->load->view('modific_articolo_template',$data);
 	   $this->load->view('footer');
 	}
-
+public function evento_tratta($var)
+	{
+	   $agent= substr($var, 10);
+       $data['id']=$agent;
+	   $session_user = $this->session->userdata('session_user');
+	   $this->load->view('header');
+	   $data['details']=$this->db_model->getallsupDetails($agent);
+	   $this->load->view('evento_tratta',$data);
+	   $this->load->view('footer');
+	}
+	public function evento_tratta_total()
+	{
 	
+	   $session_user = $this->session->userdata('session_user');
+	   $this->load->view('header');
+	   $data['allCustomers']=$this->db_model->getallCustomerGenderNationWise();
+	   $this->load->view('evento_tratta_total',$data);
+	   $this->load->view('footer');
+	}
 	
  }
