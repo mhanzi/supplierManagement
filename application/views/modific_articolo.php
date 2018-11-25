@@ -25,7 +25,7 @@
                             if ($get_img[0]['file_name'] == 'noimage.png') {
                                
                             }else{ ?>
-            <td align="center"><img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="Cinque Terre" style="width:270px;height:auto;"></td>
+            <td align="center"><img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $article[0]['sup_tipologie'];?>" style="width:270px;height:auto;"></td>
           <?php } ?>
 		  </tr>
           <tr>
