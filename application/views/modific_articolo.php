@@ -45,8 +45,7 @@
                             if ($get_img[0]['file_name'] == 'noimage.png') {
                                
                             }else{ ?>
-            <td colspan="2" align="center"> <img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $article[0]['sup_tipologie'];?> "
-                style="width:330px;height:auto;"> </td>
+            <td colspan="2" align="center"> <img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $article[0]['sup_tipologie'];?>"  style="width:330px;height:auto;"> </td>
 				<?php } ?>
           </tr>
         </tbody>
