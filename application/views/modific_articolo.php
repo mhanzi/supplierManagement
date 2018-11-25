@@ -16,7 +16,7 @@
         <tbody>
           <tr>
             <td>Nome</td>
-            <td><input type="text" class="form-control" id="nome" placeholder="<?php echo $article[0]['sup_tipologie'];?>" name="nome"></td>
+            <td><input type="text" class="form-control bdred" id="nome" placeholder="<?php echo $article[0]['sup_tipologie'];?>" name="nome"></td>
           </tr>
           <tr>
             <td>Immagine</td>
@@ -30,13 +30,15 @@
 		  </tr>
           <tr>
             <td>Numero posti</td>
-            <td><input type="text" class="form-control" id="numero_posti" placeholder="<?php echo $article[0]['numero_posti'];?>" name="numero_posti"></td>
+            <td><input type="text" class="form-control bdred" id="numero_posti" placeholder="<?php echo $article[0]['numero_posti'];?>" name="numero_posti"></td>
           </tr>
           <tr>
             <td>Dimensioni</td>
             <td>
-              h: <input type="text" width="50px" id="dime_h" value="<?php echo $article[0]['dimensioni_h'];?>" name="dime_h"> cm &nbsp;&nbsp;
-              w: <input type="text" width="50px" id="dime_w" value="<?php echo $article[0]['dimensioni_w'];?>" name="dime_w"> cm
+              <div class="form-inline"> 
+              h: <input type="text" class="form-control bdred" width="50px" id="dime_h" value="<?php echo $article[0]['dimensioni_h'];?>" name="dime_h"> cm &nbsp;&nbsp;
+              w: <input type="text" class="form-control bdred" width="50px" id="dime_w" value="<?php echo $article[0]['dimensioni_w'];?>" name="dime_w"> cm
+              </div>
             </td>
           </tr>
           <tr>
