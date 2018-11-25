@@ -17,7 +17,7 @@
     <tbody>
       <tr>
         <td>Nome</td>
-        <td><input type="text" class="form-control" id="sup_tipologie" value="<?php echo $details[0]['sup_tipologie'];?>" name="sup_tipologie"></td>
+        <td><input type="text" class="form-control bdred" id="sup_tipologie" value="<?php echo $details[0]['sup_tipologie'];?>" name="sup_tipologie"></td>
       </tr>
       <tr>
         <td>Immagine</td>
@@ -32,14 +32,14 @@
       </tr>
       <tr>
         <td>Numero posti</td>
-        <td><input type="text" class="form-control" id="numero_posti" value="<?php echo $details[0]['numero_posti'];?>" name="numero_posti"></td>
+        <td><input type="text" class="form-control bdred" id="numero_posti" value="<?php echo $details[0]['numero_posti'];?>" name="numero_posti"></td>
       </tr>
       <tr>
         <td>Dimensioni</td>
 		<?php $x=$details[0]['dimensioni_h'];
 		$y=$details[0]['dimensioni_w'];
 			$dimen=$x* $y; ?>
-        <td><input type="text" style="200px" id="dimen" value="<?php echo $dimen;?>" name="dimen"> m <sup>2</sup> </td>
+        <td><input type="text"  class="form-control bdred" id="dimen" value="<?php echo $dimen;?>" name="dimen"> m <sup>2</sup> </td>
       </tr>
       <tr>
 	     <td colspan="2" align="center"> 
