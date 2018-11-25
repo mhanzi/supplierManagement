@@ -6,24 +6,40 @@
     <title>Evento</title>
 
 
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/customd.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-slider.css">
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
 
     <script>
-        $(function () {
-            $("#slider").slider();
+        function showDiv() {
+            var x = document.getElementById("showbutton");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        $(document).ready(function () {
+            var slider = new Slider("#ex13", {
+                ticks: [0,  100],
+                ticks_labels: ['Partenza', 'Arrivo'],
+                ticks_snap_bounds: 30
+            });
         });
+    </script>
     </script>
 
 
 </head>
 
 <body>
+    <!-- #region Navigation -->
     <nav class="navbar navbar-inverse" style="border-radius:0px">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -65,6 +81,7 @@
             </ul>
         </div>
     </nav>
+    <!-- #endregion Navigation -->
 
     <div align="center" class="container">
         <h4>
@@ -77,14 +94,20 @@
 
         <br>
         <!--Slider Comes Here-->
-
+        <div style="width: 50%">
+        <input id="ex13" type="text" data-slider-ticks="[0, 100]" data-slider-ticks-snap-bounds="30"
+            data-slider-ticks-labels='["Partenza",  "Arrivo"]' />
+        </div>
+        <br>
+        <br>
         <div>
             <table class="table table-responsive" style="max-width:40%;">
                 <thead>
                     <tr>
                         <td style="vertical-align:middle; text-align: right">Search</td>
-                        <td><input type="text" class="form-control" id="txtSearch"></td>
-                        <td style="vertical-align:middle; text-align: right"><button type="button" class="btn">+ Nuova
+                        <td><input type="text" class="boderlessTextBox" id="txtSearch"></td>
+                        <td style="vertical-align:middle; text-align: right"><button type="button" class="lightButton">+
+                                Nuova
                                 tratta</button></td>
                         <td></td>
                     </tr>
@@ -107,17 +130,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Loredana</td>
-                        <td>Colombo</td>
-                        <td>Loredana</td>
-                        <td>Loredana</td>
-                        <td>Colombo</td>
-                        <td>Loredana</td>
-                        <td>60</td>
-                        <td>50</td>
-                        <td><button type="button" class="btn">Azioni Tratta</button></td>
-                    </tr>
 
                     <tr>
                         <td>Loredana</td>
@@ -128,13 +140,17 @@
                         <td>Loredana</td>
                         <td>60</td>
                         <td>50</td>
-                        <td><button type="button" class="btn">Azioni Tratta</button></br>
-                            <span class="glyphicon glyphicon-copy">Dettagi</span> </br>
-                            <span class="glyphicon glyphicon-edit"> Modifica </span> </br>
-                            <span class="glyphicon glyphicon-transfer"> Traduci </span> </br>
-                            <span class="glyphicon glyphicon-eye-open"> Mostra / Nascondi </span> </br>
-                            <span class="glyphicon glyphicon-user"> Partecipanti </span> </br>
-                            <span class="glyphicon glyphicon-globe"> Pubblica </span> </td>
+                        <td><button type="button" class="darkButton" onclick="showDiv()">Azioni Tratta</button></br>
+                            <div id="showbutton" style="display: none; padding: 15px;">
+                                <span class="fa fa-copy" style="font-size:24px" aria-hidden="true" style="width:30px"></span>Dettagi</br>
+                                <span class="fa fa-edit" style="font-size:24px" aria-hidden="true" style="width:30px"></span>Modifica<br>
+                                <span class="fa fa-language" style="font-size:24px" aria-hidden="true" style="width:30px"></span>Traduci</br>
+                                <span class="fa fa-eye" style="font-size:24px" aria-hidden="true" style="width:30px"></span>Mostra
+                                / Nascondi</br>
+                                <span class="fa fa-user" style="font-size:24px" aria-hidden="true" style="width:30px"></span>Partecipanti</br>
+                                <span class="fa fa-globe" style="font-size:24px" aria-hidden="true" style="width:30px"></span>Pubblica</br>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
                 </td>
@@ -142,5 +158,3 @@
         </div>
     </div>
 </body>
-
-s
