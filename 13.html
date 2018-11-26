@@ -5,11 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Evento</title>
 
-
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/customd.css">
     <link rel="stylesheet" href="css/bootstrap-slider.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -26,13 +27,13 @@
         }
 
         $(document).ready(function () {
-            var slider = new Slider("#ex13", {
-                ticks: [0,  100],
+            var slider = new Slider("#sliderdis", {
+                ticks: [0, 100],
                 ticks_labels: ['Partenza', 'Arrivo'],
-                ticks_snap_bounds: 30
+                ticks_snap_bounds: 1
             });
         });
-    </script>
+
     </script>
 
 
@@ -95,11 +96,10 @@
         <br>
         <!--Slider Comes Here-->
         <div style="width: 50%">
-        <input id="ex13" type="text" data-slider-ticks="[0, 100]" data-slider-ticks-snap-bounds="30"
-            data-slider-ticks-labels='["Partenza",  "Arrivo"]' />
+            <input id="sliderdis" type="text" data-slider-ticks="[0, 100]" data-slider-ticks-snap-bounds="1"
+                data-slider-ticks-labels='["Partenza",  "Arrivo"]' data-slider-tooltip="hide" />
         </div>
-        <br>
-        <br>
+
         <div>
             <table class="table table-responsive" style="max-width:40%;">
                 <thead>
@@ -115,7 +115,7 @@
             </table>
         </div>
         <div class="table-responsive">
-            <table class="contact-table table table-curved table-responsive">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th id="rcornerl">Nome </th>
