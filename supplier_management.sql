@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2018 at 10:50 AM
+-- Generation Time: Nov 25, 2018 at 09:57 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -82,7 +82,7 @@ CREATE TABLE `supplier_detail` (
 INSERT INTO `supplier_detail` (`detail_id`, `supplier_id`, `sup_tipologie`, `sup_descrizione`, `sup_inizio`, `sup_fine`, `sup_listino`, `sup_sconto`, `sup_stato`, `sup_added_by`, `sup_added_on`, `immagine`, `numero_posti`, `dimensioni_h`, `dimensioni_w`, `article_img`, `url_details`, `quantita_primi`, `quantita_secondi`, `quantita_contorni`, `quantita_dolci`, `frutta`, `bevande`, `min_Prezzo`, `max_Prezzo`) VALUES
 (1, 1, 'Taucil', 'disponsible', '2018-11-08', '2018-11-19', '$ 40 ', '10%', 'Attivo', 0, '0000-00-00 00:00:00', 4, 22, 45, 33, 3, 'modific_articolo', 0, 0, 0, 0, 0, 0, 0, 0),
 (2, 1, 'menu_fisso', 'menu fisso a scelta tra 2 pirmi 2 sec', '0000-00-00', '0000-00-00', '', '', '', 0, '0000-00-00 00:00:00', 4, 0, 0, 0, 3, 'modific_articolo_temp', 0, 0, 0, 0, 0, 1, 0, 0),
-(3, 1, 'Buffet', 'Disponsibili vari', '0000-00-00', '0000-00-00', '', '', '', 0, '0000-00-00 00:00:00', 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0);
+(3, 1, 'Buffet', 'Disponsibili vari', '0000-00-00', '0000-00-00', '', '', '', 0, '0000-00-00 00:00:00', 5, 66, 34, 44, 6, 'modific_articolo_template', 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,9 @@ INSERT INTO `tbl_file_uploader` (`file_id`, `file_name`) VALUES
 (1, '1.jpg'),
 (2, '35_5.JPG'),
 (3, 'tavolvo.JPG'),
-(4, 'tavolvo2.JPG');
+(4, 'tavolvo2.JPG'),
+(5, 'sala.JPG'),
+(6, 'map.JPG');
 
 -- --------------------------------------------------------
 
@@ -261,7 +263,7 @@ ALTER TABLE `supplier_detail`
 -- AUTO_INCREMENT for table `tbl_file_uploader`
 --
 ALTER TABLE `tbl_file_uploader`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_suppliers_details`

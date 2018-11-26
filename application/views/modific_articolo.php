@@ -16,7 +16,7 @@
         <tbody>
           <tr>
             <td>Nome</td>
-            <td><input type="text" class="form-control" id="nome" placeholder="<?php echo $article[0]['sup_tipologie'];?>" name="nome"></td>
+            <td><input type="text" class="form-control bdred" id="nome" placeholder="<?php echo $article[0]['sup_tipologie'];?>" name="nome"></td>
           </tr>
           <tr>
             <td>Immagine</td>
@@ -25,18 +25,20 @@
                             if ($get_img[0]['file_name'] == 'noimage.png') {
                                
                             }else{ ?>
-            <td align="center"><img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="Cinque Terre" style="width:270px;height:auto;"></td>
+            <td align="center"><img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $article[0]['sup_tipologie'];?>" style="width:270px;height:auto;"></td>
           <?php } ?>
 		  </tr>
           <tr>
             <td>Numero posti</td>
-            <td><input type="text" class="form-control" id="numero_posti" placeholder="<?php echo $article[0]['numero_posti'];?>" name="numero_posti"></td>
+            <td><input type="text" class="form-control bdred" id="numero_posti" placeholder="<?php echo $article[0]['numero_posti'];?>" name="numero_posti"></td>
           </tr>
           <tr>
             <td>Dimensioni</td>
             <td>
-              h: <input type="text" width="50px" id="dime_h" value="<?php echo $article[0]['dimensioni_h'];?>" name="dime_h"> cm &nbsp;&nbsp;
-              w: <input type="text" width="50px" id="dime_w" value="<?php echo $article[0]['dimensioni_w'];?>" name="dime_w"> cm
+              <div class="form-inline"> 
+              h: <input type="text" class="form-control bdred" width="50px" id="dime_h" value="<?php echo $article[0]['dimensioni_h'];?>" name="dime_h"> cm &nbsp;&nbsp;
+              w: <input type="text" class="form-control bdred" width="50px" id="dime_w" value="<?php echo $article[0]['dimensioni_w'];?>" name="dime_w"> cm
+              </div>
             </td>
           </tr>
           <tr>
@@ -45,8 +47,7 @@
                             if ($get_img[0]['file_name'] == 'noimage.png') {
                                
                             }else{ ?>
-            <td colspan="2" align="center"> <img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $article[0]['sup_tipologie'];?> "
-                style="width:330px;height:auto;"> </td>
+            <td colspan="2" align="center"> <img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $article[0]['sup_tipologie'];?>"  style="width:330px;height:auto;"> </td>
 				<?php } ?>
           </tr>
         </tbody>

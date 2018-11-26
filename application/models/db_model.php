@@ -17,6 +17,31 @@ class db_model extends CI_Model
         return $query->result_array();
     }
 	
+	public function getallsupDetails($id)
+	{
+	    $this->db->select('*');
+        $this->db->from('tbl_customer_list');
+        $this->db->where('customer_id', $id);
+        $query = $this->db->get();
+        if ($query->num_rows() >= 1) {
+		
+        return $query->result_array();
+	
+        } else {
+            return false; 
+        }
+	}
+	
+	public function getallCustomerGenderNationWise(){
+	//get the customers nationality wise gender wise user type
+	    $query = 'SELECT user_type,customer_nazione FROM tbl_customer_list 
+		INNER JOIN tbl_user_type ON tbl_user_type.tbl_user_type_id = tbl_customer_list.user_type 
+		Group BY tbl_customer_list.user_type , `customer_nazione`';
+        $query_result = $this->db->query($query);
+        return $query_result->result_array();
+	 	
+	}
+	
 	public function getSuppliersDetails($id)
 	{
 	    $this->db->select('*');

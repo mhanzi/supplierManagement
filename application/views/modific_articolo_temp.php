@@ -18,7 +18,7 @@
     <tbody>
       <tr>
         <td>Nome</td>
-        <td><input type="text" class="form-control" id="sup_tipologie" placeholder="<?php echo $details[0]['sup_tipologie'];?>" name="sup_tipologie"></td>
+        <td><input type="text" class="form-control bdred" id="sup_tipologie" placeholder="<?php echo $details[0]['sup_tipologie'];?>" name="sup_tipologie"></td>
       </tr>
       <tr>
         <td>Immagine</td>
@@ -27,24 +27,24 @@
                             if ($get_img[0]['file_name'] == 'noimage.png') {
                                
                             }else{ ?>
-        <td align="center"><img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $details[0]['sup_tipologie'];?>" style="width:270px;height:auto;"><</td>
+        <td align="center"><img src="<?php echo  base_url()."uploads/article/".$get_img[0]['file_name']; ?>" class="img-responsive img-rounded" alt="<?php echo $details[0]['sup_tipologie'];?>" style="width:270px;height:auto;"></td>
       <?php } ?>
 	  </tr>
       <tr>
         <td>Quantita Primi</td>
-        <td><input type="text" class="form-control" id="quantita_primi" placeholder="<?php echo $details[0]['quantita_primi'];?>" name="quantita_primi"></td>
+        <td><input type="text" class="form-control bdred" id="quantita_primi" placeholder="<?php echo $details[0]['quantita_primi'];?>" name="quantita_primi"></td>
       </tr>
       <tr>
         <td>Quantita secondi</td>
-        <td><input type="text" class="form-control" id="quantita_secondi" placeholder="<?php echo $details[0]['quantita_secondi'];?>" name="quantita_secondi"></td>
+        <td><input type="text" class="form-control bdred" id="quantita_secondi" placeholder="<?php echo $details[0]['quantita_secondi'];?>" name="quantita_secondi"></td>
       </tr>
       <tr>
         <td>Quantita contorni</td>
-        <td><input type="text" class="form-control" id="quantita_contorni" placeholder="<?php echo $details[0]['quantita_contorni'];?>" name="quantita_contorni"></td>
+        <td><input type="text" class="form-control bdred" id="quantita_contorni" placeholder="<?php echo $details[0]['quantita_contorni'];?>" name="quantita_contorni"></td>
       </tr>
       <tr>
         <td>Quantita Dolci</td>
-        <td><input type="text" class="form-control" id="quantita_dolci" placeholder="<?php echo $details[0]['quantita_dolci'];?>" name="quantita_dolci"></td>
+        <td><input type="text" class="form-control bdred" id="quantita_dolci" placeholder="<?php echo $details[0]['quantita_dolci'];?>" name="quantita_dolci"></td>
       </tr>
       <tr>
         <td>Frutta</td>
@@ -80,8 +80,10 @@
       <tr>
         <td>Prezzo</td>
         <td>
-        	min &nbsp; <input type="text" style="width:60px" id="min_Prezzo" name="min_Prezzo" value="<?php echo $details[0]['min_Prezzo'];?>">  &#8364;  &nbsp;&nbsp;&nbsp;&nbsp;
-        	max &nbsp; <input type="text" style="width:60px"  id="max_Prezzo" name="max_Prezzo" value="<?php echo $details[0]['max_Prezzo'];?>"> &#8364;
+        <div class="form-inline"> 
+        	min <input type="text" class="form-control bdred" style="width:60px" id="min_Prezzo" name="min_Prezzo" value="<?php echo $details[0]['min_Prezzo'];?>">  &#8364;  &nbsp;&nbsp;&nbsp;&nbsp;
+        	max <input type="text" class="form-control bdred" style="width:60px"  id="max_Prezzo" name="max_Prezzo" value="<?php echo $details[0]['max_Prezzo'];?>"> &#8364;
+            </div>
         </td>
       </tr>
      <tbody>
