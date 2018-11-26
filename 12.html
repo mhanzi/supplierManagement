@@ -2,21 +2,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Envoto</title>
-
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/customd.css">
+    <link rel="stylesheet" href="css/bootstrap-slider.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-
+    <script src="js/bootstrap-slider.js"></script>
 </head>
 
-<body>
+<script>
+    $(document).ready(function () {
 
+        var realValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var labelValues = ["11:00", "11:15", "11:30", "11:45", "12:00", "12:45", "13:00", "14:00", "14:30", "15:00"];
+
+        var r = $('#sliderdis').slider({
+            max: 3,
+            min: 0,
+            step: 1,
+            ticks: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            formatter: function (val) {
+                return labelValues[val];
+            }
+        })
+            .on('change', function (data) {
+                console.log(data);
+                var tooltiptext = data.newValue;
+                $("#sliderdis").text(data.value.newValue + ' ' + realValues[data.value.newValue])
+            });
+    });
+
+
+</script>
+
+
+<body>
+     <!-- #region Navigation -->
     <nav class="navbar navbar-inverse" style="border-radius:0px">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -39,6 +64,8 @@
             </ul>
         </div>
     </nav>
+
+     <!-- #endregion Navigation -->
 
     <div align="center" class="container">
         <h3><span class="label label-default">Modifica ArticoloL Guida </span></h3>
@@ -104,8 +131,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"> Tratta <br>
-                            <!--Slider Goes Here-->
+                        <td colspan="2" align="center">
+                            <h3>Tratta</h3> <br>
+                            <br>
+                            <div style="width: 90%;">
+                                <input id="sliderdis" type="text" data-slider-ticks-labels='["11:00","11:15","11:30","11:45","12:00","12:45","13:00","14:00","14:30","15:00"]'
+                                    data-slider-value=0>
+                            </div>
                         </td>
                     </tr>
                     <tr>
