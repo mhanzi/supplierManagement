@@ -27,6 +27,9 @@
         }
 
         $(document).ready(function () {
+
+
+
             var slider = new Slider("#sliderdis", {
                 ticks: [0, 100],
                 ticks_labels: ['Partenza', 'Arrivo'],
@@ -35,6 +38,12 @@
         });
 
     </script>
+
+    <style>
+        .slider.slider-horizontal .slider-tick, .slider.slider-horizontal .slider-handle {
+            background-color: white;
+}
+    </style>
 
 
 </head>
@@ -101,7 +110,7 @@
         </div>
 
         <div>
-            <table class="table table-responsive" style="max-width:40%;">
+            <table class="table table-responsive" style="max-width:40%">
                 <thead>
                     <tr>
                         <td style="vertical-align:middle; text-align: right">Search</td>

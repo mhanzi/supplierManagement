@@ -140,9 +140,16 @@
   pointer-events: none;
 }
 
-.slider .tooltip.top {
+ .slider .tooltip.top {
+  margin-top: -36px;
+  
+} 
+
+/* .slider .tooltip.bottom{
   margin-top: -36px;
 }
+
+ */
 
 .slider .tooltip-inner {
   white-space: nowrap;
@@ -184,12 +191,13 @@
   border: 1px solid #d17965;
 }
 
+
 .slider-handle {
   position: absolute;
   top: 0;
   width: 20px;
   height: 20px;
-  background-color: white;
+  background-color: #d17965;
   border: 2px solid #d17965;
 }
 
