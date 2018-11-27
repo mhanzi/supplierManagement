@@ -2,6 +2,7 @@
 /* CSS Document */
 
 /*#region Table*/
+
 th {
   background-color: #d17965;
   color: white;
@@ -28,23 +29,26 @@ th {
   text-align: center;
   border-bottom: 2px solid #ddd;
 }
+
 /*#endregion Table*/
 
 /*#region TextBox*/
+
 /* Text Box design */
 
 .boderlessTextBox {
   width: 100%;
   border-top: none;
   border-left: none;
-  border-bottom: 1px solid #d17965;
-  border-right: 1px solid #d17965;
+  border-bottom: 2px solid #d17965;
+  border-right: 2px solid #d17965;
   padding: 8px 6px;
 }
 
 /*#endregion TextBox*/
 
 /*#region Buttons*/
+
 .darkButton {
   background-color: #777;
   display: inline-block;
@@ -91,71 +95,70 @@ th {
 /*#endregion Buttons*/
 
 /*#region CheckBox*/
+
 label {
-	display: inline;
+  display: inline;
 }
 
 .regular-checkbox {
-	display: none;
+  display: none;
 }
 
-.regular-checkbox + label {
-	background-color: #fafafa;
-	border: 2px solid #d17965;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-	padding: 9px;
-	display: inline-block;
-	position: relative;
+.regular-checkbox+label {
+  background-color: #fafafa;
+  border: 2px solid #d17965;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  display: inline-block;
+  position: relative;
 }
 
-.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+.regular-checkbox+label:active, .regular-checkbox:checked+label:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.regular-checkbox:checked + label {
-	background-color: #d17965;
-	border: 1px solid #d17965;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
-	color: #99a1a7;
+.regular-checkbox:checked+label {
+  background-color: #d17965;
+  border: 1px solid #d17965;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
 }
 
-
-.big-checkbox + label {
-	padding: 14px;
+.big-checkbox+label {
+  padding: 14px;
 }
 
-.big-checkbox:checked + label:after {
-	font-size: 14px;
-	left: 6px;
+.big-checkbox:checked+label:after {
+  font-size: 14px;
+  left: 6px;
 }
 
 .tag {
-	font-family: Arial, sans-serif;
-	position: relative;
-	top: 5px;
-	font-weight: bold;
-	text-transform: uppercase;
-	display: block;
+  font-family: Arial, sans-serif;
+  position: relative;
+  top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
   float: left;
   left: 40%;
 }
+
 /*#endregion CheckBox*/
 
-
-
-
-#ex1Slider .slider-selection, #ex1Slider .slider-track-high{
+#ex1Slider .slider-selection, #ex1Slider .slider-track-high {
   background: #FFF9C4;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   height: 7px;
-
 }
+
 #ex1Slider {
   width: 300px;
 }
 
 /* .tooltip - background of tooltip */
-#ex1Slider  .tooltip-inner {
+
+#ex1Slider .tooltip-inner {
   background-color: #FFF9C4;
   border-radius: 15px;
   color: #000;
@@ -173,6 +176,7 @@ label {
 }
 
 /* This sets the color of the arrow that connects the tooltip to the handle */
+
 #ex1Slider .tooltip-arrow {
   border-top-color: #fafafa;
   margin-left: -7px;
@@ -192,10 +196,10 @@ h2 {
 }
 
 .bdred {
-	border-right-color:#d17965; 
-	border-bottom-color:#d17965; 
-	border-left-color:#FFF; 
-	border-top-color:#FFF;
-	border-style: solid;
-    border-width: 2px;
+  border-right-color: #d17965;
+  border-bottom-color: #d17965;
+  border-left-color: #FFF;
+  border-top-color: #FFF;
+  border-style: solid;
+  border-width: 2px;
 }
