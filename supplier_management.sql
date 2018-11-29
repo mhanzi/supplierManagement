@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2018 at 09:57 AM
+-- Generation Time: Nov 29, 2018 at 12:39 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -31,15 +31,22 @@ SET time_zone = "+00:00";
 CREATE TABLE `assign_seats` (
   `seat_id` int(11) NOT NULL,
   `article` text NOT NULL,
-  `img_seat` int(11) NOT NULL
+  `img_seat` int(11) NOT NULL,
+  `seat_type` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `assign_seats`
 --
 
-INSERT INTO `assign_seats` (`seat_id`, `article`, `img_seat`) VALUES
-(1, 'Articolo: Pullman 1\r\n                                <br> Fornitore : Colombo\r\n                                <br> Posti max : 35\r\n                                <br> Posti assegnati :20', 2);
+INSERT INTO `assign_seats` (`seat_id`, `article`, `img_seat`, `seat_type`) VALUES
+(1, 'Articolo: Pullman 1\r\n                                <br> Fornitore : Colombo\r\n                                <br> Posti max : 35\r\n                                <br> Posti assegnati :20', 2, 1),
+(2, 'Articolo: Pullman 1 \r\nFornitore : Colombo \r\nPosti max : 35 \r\nPosti assegnati :13', 11, 1),
+(3, 'Articolo: Pullman 1 \r\nFornitore : Colombo \r\nPosti max : 35 \r\nPosti assegnati :5\r\n\r\n\r\n', 12, 1),
+(4, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 10 \r\nPosti assegnati :6', 7, 2),
+(5, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 6 \r\nPosti assegnati :4\r\n\r\n', 8, 2),
+(6, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 2 \r\nPosti assegnati :0', 9, 2),
+(7, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 2 \r\nPosti assegnati :2', 10, 2);
 
 -- --------------------------------------------------------
 
@@ -87,6 +94,45 @@ INSERT INTO `supplier_detail` (`detail_id`, `supplier_id`, `sup_tipologie`, `sup
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_customer_list`
+--
+
+CREATE TABLE `tbl_customer_list` (
+  `customer_id` int(11) NOT NULL,
+  `customer_nome` varchar(50) NOT NULL,
+  `customer_cognome` varchar(50) NOT NULL,
+  `customer_nazione` varchar(30) NOT NULL,
+  `customer_sesso` varchar(20) NOT NULL,
+  `customer_email` varchar(30) NOT NULL,
+  `customer_telefono` varchar(20) NOT NULL,
+  `user_type` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_customer_list`
+--
+
+INSERT INTO `tbl_customer_list` (`customer_id`, `customer_nome`, `customer_cognome`, `customer_nazione`, `customer_sesso`, `customer_email`, `customer_telefono`, `user_type`) VALUES
+(1, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 1),
+(2, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2),
+(3, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 1),
+(4, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2),
+(5, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 2),
+(6, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2),
+(7, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 1),
+(8, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2),
+(9, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 2),
+(10, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2),
+(11, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 1),
+(12, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2),
+(13, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 2),
+(14, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2),
+(15, 'Loredana', 'Colombo', 'Italia', 'Femmina', 'loredana@ciao.it', '33392285**', 1),
+(16, 'Alession ', 'Speranza ', 'Spagna', 'Maschio', 'Lorendana@ciao.it', '33392285**', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_file_uploader`
 --
 
@@ -101,11 +147,17 @@ CREATE TABLE `tbl_file_uploader` (
 
 INSERT INTO `tbl_file_uploader` (`file_id`, `file_name`) VALUES
 (1, '1.jpg'),
-(2, '35_5.JPG'),
+(2, '35_13.JPG'),
 (3, 'tavolvo.JPG'),
 (4, 'tavolvo2.JPG'),
 (5, 'sala.JPG'),
-(6, 'map.JPG');
+(6, 'map.JPG'),
+(7, 'seat_1.JPG'),
+(8, 'seat_2.JPG'),
+(9, 'seat_3.JPG'),
+(10, 'seat_4.JPG'),
+(11, '35_20.JPG'),
+(12, '35_5.JPG');
 
 -- --------------------------------------------------------
 
@@ -197,6 +249,25 @@ CREATE TABLE `tbl_user_permission` (
   `permission_given_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user_type`
+--
+
+CREATE TABLE `tbl_user_type` (
+  `tbl_user_type_id` int(11) NOT NULL,
+  `user_type` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_user_type`
+--
+
+INSERT INTO `tbl_user_type` (`tbl_user_type_id`, `user_type`) VALUES
+(1, 'Loredana'),
+(2, 'Alessio');
+
 --
 -- Indexes for dumped tables
 --
@@ -212,6 +283,12 @@ ALTER TABLE `assign_seats`
 --
 ALTER TABLE `supplier_detail`
   ADD PRIMARY KEY (`detail_id`);
+
+--
+-- Indexes for table `tbl_customer_list`
+--
+ALTER TABLE `tbl_customer_list`
+  ADD PRIMARY KEY (`customer_id`);
 
 --
 -- Indexes for table `tbl_file_uploader`
@@ -244,6 +321,12 @@ ALTER TABLE `tbl_user_permission`
   ADD PRIMARY KEY (`tbl_permission_id`);
 
 --
+-- Indexes for table `tbl_user_type`
+--
+ALTER TABLE `tbl_user_type`
+  ADD PRIMARY KEY (`tbl_user_type_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -251,7 +334,7 @@ ALTER TABLE `tbl_user_permission`
 -- AUTO_INCREMENT for table `assign_seats`
 --
 ALTER TABLE `assign_seats`
-  MODIFY `seat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `seat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `supplier_detail`
@@ -260,10 +343,16 @@ ALTER TABLE `supplier_detail`
   MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `tbl_customer_list`
+--
+ALTER TABLE `tbl_customer_list`
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT for table `tbl_file_uploader`
 --
 ALTER TABLE `tbl_file_uploader`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_suppliers_details`
@@ -288,6 +377,12 @@ ALTER TABLE `tbl_user_level`
 --
 ALTER TABLE `tbl_user_permission`
   MODIFY `tbl_permission_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_user_type`
+--
+ALTER TABLE `tbl_user_type`
+  MODIFY `tbl_user_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
