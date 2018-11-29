@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url('suppliers/assegna_posti');?>">Assegna Posti</a></li>
           <li><a href="<?php echo site_url('suppliers/assegna_posti_more');?>">Assegna Posti More</a></li>
-          <li><a href="#">Page 1-3</a></li>
+          <li><a href="<?php echo site_url('suppliers/assegna_postio');?>">Assegna Postioo</a></li>
         </ul>
 	  </li>
 	  

@@ -45,6 +45,15 @@ class suppliers extends CI_Controller {
 		
      
     }
+	
+	public function assegna_posti()
+    { 
+     	//assign seats for the customers      
+        $data['seats']=$this->db_model->get_seat_details(1);
+        $this->load->view('header');
+        $this->load->view('assign_seats',$data);
+        $this->load->view('footer');     
+    }
 		public function assegna_posti_more()
     { 
      	//assign seats for the customers      
@@ -53,12 +62,13 @@ class suppliers extends CI_Controller {
         $this->load->view('assegna_posti',$data);
         $this->load->view('footer');     
     }
-	public function assegna_posti()
+	
+		public function assegna_postio()
     { 
      	//assign seats for the customers      
-        $data['seats']=$this->db_model->get_seat_details(1);
+        $data['seats']=$this->db_model->get_seat_details(3);
         $this->load->view('header');
-        $this->load->view('assign_seats',$data);
+        $this->load->view('assegna_postio',$data);
         $this->load->view('footer');     
     }
 	
