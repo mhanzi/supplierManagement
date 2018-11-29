@@ -8,14 +8,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Supplier Management</title>
 
- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  
+  
   <link rel="stylesheet" href="<?php echo site_url('css/bootstrap.min.css');?>">
   <link rel="stylesheet" href="<?php echo site_url('css/customd.css');?>">
-  <link rel="stylesheet" href="<?php echo site_url('css/font-awesome.min.css');?>">
-  
-  <script src="<?php echo site_url('js/jquery.min.js');?>"></script>
+   <link rel="stylesheet" href="<?php echo site_url('css/bootstrap-slider.css');?>">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="<?php echo site_url('js/jquery.min.js');?>"></script>
   <script src="<?php echo site_url('js/bootstrap.min.js');?>"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="<?php echo site_url('js/bootstrap-slider.js');?>"></script>
+  
+  
+  
 
 
 </head>
@@ -25,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <nav class="navbar navbar-inverse" style="border-radius:0px">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">System Name</a>
+      <a class="navbar-brand" href="#">Supplier Management</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="<?php echo site_url();?>">Suppliers</a></li>
@@ -36,15 +44,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li><a href="#">Page 1-3</a></li>
         </ul>
       </li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('suppliers/aggiungi_fornitore');?>">Aggiungi Fornitore <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="<?php echo site_url('suppliers/aggiungi_fornitore');?>">Aggiungi Fornitore </a></li>
+          <li><a href="<?php echo site_url('suppliers/');?>">Evento Tratta</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+	  
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('suppliers/assegna_posti');?>">Assegna Posti <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url('suppliers/assegna_posti');?>">Assegna Posti</a></li>
           <li><a href="<?php echo site_url('suppliers/assegna_posti_more');?>">Assegna Posti More</a></li>
-          <li><a href="<?php echo site_url('suppliers/assegna_postio');?>">Assegna Postioo</a></li>
         </ul>
 	  </li>
-	  
-	  
+	   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('suppliers/lista_tratte');?>">Lista Tratte <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="<?php echo site_url('suppliers/lista_tratte');?>">Lista Tratte</a></li>
+        </ul>
+	  </li>
+	  <li ><a  href="<?php echo site_url('suppliers/filter_articles');?>">Filter Articles</a></li> 
+	   <li ><a  href="<?php echo site_url('suppliers/gestione_tratta ');?>">Gestione Tratta </a></li> 
+	   <li ><a  href="<?php echo site_url('suppliers/lista_partecipanti');?>">List a Partecipanti</a></li> 
 	  
     </ul>
     <ul class="nav navbar-nav navbar-right">

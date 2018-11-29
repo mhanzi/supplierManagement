@@ -72,11 +72,52 @@ class suppliers extends CI_Controller {
         $this->load->view('footer');     
     }
 	
+	public function aggiungi_fornitore($var){
+	    $agent= substr($var, 10);
+        $data['id']=$agent;
+        $data['supDetail']=$this->db_model->getSupplierDetails($agent);
+        $data['supplier']=$this->db_model->getSuppliersDetails($agent);
+        $this->load->view('header');
+        $this->load->view('aggiungi_fornitore',$data);
+        $this->load->view('footer');     
+	
+	}
+	public function lista_tratte(){
+	    
+       // no idea about the table which should connect
+        $this->load->view('header');
+        $this->load->view('lista_tratte');
+        $this->load->view('footer');     
+	
+	}
+	
+	public function filter_articles(){
+	// no idea about the table which should connect
+	    $this->load->view('header');
+        $this->load->view('filter_articles');
+        $this->load->view('footer');     
+	
+	}
+	
+	public function gestione_tratta(){
+	// no idea about the table which should connect page 14
+	    $this->load->view('header');
+        $this->load->view('gestione_tratta');
+        $this->load->view('footer'); 
 	
 	
-	   public function supplier_detail($var)
+	}
+	
+	public function lista_partecipanti(){
+	// no idea about the table which should connect page 15
+	    $this->load->view('header');
+        $this->load->view('lista_partecipanti');
+        $this->load->view('footer'); 	
+	}
+	
+	public function supplier_detail($var)
     { 
-	//add_supplier
+	//supplier details
         $agent= substr($var, 10);
         $data['id']=$agent;
         $data['supDetail']=$this->db_model->getSupplierDetails($agent);
@@ -85,6 +126,7 @@ class suppliers extends CI_Controller {
         $this->load->view('supplier_detail',$data);
         $this->load->view('footer');
 	}
+	
 	//modific articolo
 	public function modific_articolo($var)
 	{

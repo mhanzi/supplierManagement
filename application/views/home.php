@@ -67,7 +67,7 @@
        <div id="idList<?php echo $sup['tbl_sup_id'];?>" style="display:none">
                <a href="<?php echo site_url('suppliers/supplier_detail/'.$randomString.$sup['tbl_sup_id']);?>"> <span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span></a>  </br>
 		<a href="<?php echo site_url('suppliers/edit_supplier/'.$randomString.$sup['tbl_sup_id']);?>"><span class="glyphicon glyphicon-edit"> Modifica </span></a>  </br>
-		<span class="glyphicon glyphicon-retweet"> Articoli </span>  </br>
+		<a href="<?php echo site_url('suppliers/aggiungi_fornitore/'.$randomString.$sup['tbl_sup_id']);?>"><span class="glyphicon glyphicon-retweet"> Articoli </span></a>  </br>
 			<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
 		<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
 		<span class="glyphicon glyphicon-globe"> Pubblica </span>

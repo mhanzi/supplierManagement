@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2018 at 01:40 PM
+-- Generation Time: Nov 29, 2018 at 09:50 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -163,7 +163,9 @@ INSERT INTO `tbl_file_uploader` (`file_id`, `file_name`) VALUES
 (12, '35_5.JPG'),
 (13, 'tavolo1.JPG'),
 (14, 'tavolo2.JPG'),
-(15, 'tavolo3.JPG');
+(15, 'tavolo3.JPG'),
+(16, 'treat_1.JPG'),
+(17, 'treat_2.JPG');
 
 -- --------------------------------------------------------
 
@@ -196,16 +198,23 @@ CREATE TABLE `tbl_suppliers_details` (
   `tipologia` varchar(50) NOT NULL,
   `stato` varchar(50) NOT NULL,
   `added_by` int(11) NOT NULL,
-  `added_on` datetime NOT NULL
+  `added_on` datetime NOT NULL,
+  `numero_guide` int(11) NOT NULL,
+  `numero_posti_guidea` int(11) NOT NULL,
+  `orario_dalle` time NOT NULL,
+  `orario_alle` time NOT NULL,
+  `prezzo_persona` decimal(10,0) NOT NULL,
+  `article_images` int(11) NOT NULL,
+  `article_images_2` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_suppliers_details`
 --
 
-INSERT INTO `tbl_suppliers_details` (`tbl_sup_id`, `tbl_supplier_name`, `marchio`, `descrizione`, `sup_tel`, `indirizzo`, `referente`, `inizio_fornitura`, `fine_fornitura`, `partita_IVA`, `tipologia`, `stato`, `added_by`, `added_on`) VALUES
-(1, 'Marina', 1, 'ristorante di pesce siyuato sul mar timenoa ostia\r\n', 0, '', '', '2018-11-14', '2018-11-23', 956435645, 'Cibo', 'Ativo', 1, '2018-11-10 06:24:20'),
-(2, 'Marina', 1, 'ristorante di pesce siyuato sul mar timenoa ostia\r\n', 0, '', '', '2018-11-14', '2018-11-23', 956435645, 'Cibo', 'Ativo', 1, '2018-11-10 06:24:20');
+INSERT INTO `tbl_suppliers_details` (`tbl_sup_id`, `tbl_supplier_name`, `marchio`, `descrizione`, `sup_tel`, `indirizzo`, `referente`, `inizio_fornitura`, `fine_fornitura`, `partita_IVA`, `tipologia`, `stato`, `added_by`, `added_on`, `numero_guide`, `numero_posti_guidea`, `orario_dalle`, `orario_alle`, `prezzo_persona`, `article_images`, `article_images_2`) VALUES
+(1, 'Marina', 1, 'ristorante di pesce siyuato sul mar timenoa ostia\r\n', 0, '', '', '2018-11-14', '2018-11-23', 956435645, 'Cibo', 'Ativo', 1, '2018-11-10 06:24:20', 3, 4, '04:30:00', '03:28:25', '44', 16, 17),
+(2, 'Marina', 1, 'ristorante di pesce siyuato sul mar timenoa ostia\r\n', 0, '', '', '2018-11-14', '2018-11-23', 956435645, 'Cibo', 'Ativo', 1, '2018-11-10 06:24:20', 0, 0, '00:00:00', '00:00:00', '0', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -358,7 +367,7 @@ ALTER TABLE `tbl_customer_list`
 -- AUTO_INCREMENT for table `tbl_file_uploader`
 --
 ALTER TABLE `tbl_file_uploader`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tbl_suppliers_details`
