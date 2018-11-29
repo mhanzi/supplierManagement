@@ -45,15 +45,24 @@ class suppliers extends CI_Controller {
 		
      
     }
-	
-	public function assign_seats()
+		public function assegna_posti_more()
     { 
      	//assign seats for the customers      
-        $data['seats']=$this->db_model->get_seat_details();
+        $data['seats']=$this->db_model->get_seat_details(2);
+        $this->load->view('header');
+        $this->load->view('assegna_posti',$data);
+        $this->load->view('footer');     
+    }
+	public function assegna_posti()
+    { 
+     	//assign seats for the customers      
+        $data['seats']=$this->db_model->get_seat_details(1);
         $this->load->view('header');
         $this->load->view('assign_seats',$data);
         $this->load->view('footer');     
     }
+	
+	
 	
 	   public function supplier_detail($var)
     { 
@@ -98,16 +107,17 @@ class suppliers extends CI_Controller {
 	   $this->load->view('modific_articolo_template',$data);
 	   $this->load->view('footer');
 	}
-public function evento_tratta($var)
+public function evento_tratta()
 	{
-	   $agent= substr($var, 10);
-       $data['id']=$agent;
 	   $session_user = $this->session->userdata('session_user');
 	   $this->load->view('header');
-	   $data['details']=$this->db_model->getallsupDetails($agent);
+	   $data['details']=$this->db_model->getalluserDetails();
 	   $this->load->view('evento_tratta',$data);
 	   $this->load->view('footer');
 	}
+	
+	
+
 	public function evento_tratta_total()
 	{
 	

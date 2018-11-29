@@ -28,15 +28,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <a class="navbar-brand" href="#">System Name</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="<?php echo site_url();?>">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+      <li class="active"><a href="<?php echo site_url();?>">Suppliers</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('suppliers/evento_tratta_total');?>">Evento Tratta <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
+          <li><a href="<?php echo site_url('suppliers/evento_tratta_total');?>">Evento Tratta Total</a></li>
+          <li><a href="<?php echo site_url('suppliers/evento_tratta');?>">Evento Tratta</a></li>
           <li><a href="#">Page 1-3</a></li>
         </ul>
       </li>
-      <li><a href="#">Page 2</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('suppliers/assegna_posti');?>">Assegna Posti <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="<?php echo site_url('suppliers/assegna_posti');?>">Assegna Posti</a></li>
+          <li><a href="<?php echo site_url('suppliers/assegna_posti_more');?>">Assegna Posti More</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+	  </li>
+	  
+	  
+	  
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

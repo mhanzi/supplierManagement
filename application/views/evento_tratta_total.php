@@ -52,20 +52,15 @@
                     </tr>
                 </thead>
                 <tbody>
+				<?php foreach($allCustomers as $allCustomer) { ?>
                     <tr>
-                        <td>Loredana</td>
-                        <td>Colombo</td>
-                        <td>50</td>
-                        <td>60</td>
+                        <td><?php echo $allCustomer['user_type'];?></td>
+                        <td><?php echo $allCustomer['customer_nazione'];?></td>
+                        <td><?php echo $allCustomer['customer_nazione'];?></td>
+                        <td><?php echo $allCustomer['customer_nazione'];?></td>
                     </tr>
 
-                    <tr>
-                        <td>Alessio</td>
-                        <td>Speranza</td>
-                        <td>44</td>
-                        <td>66</td>
-                    </tr>
-
+                   <?php } ?>
                     <td>
                         &nbsp;
                     </td>
