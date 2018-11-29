@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2018 at 12:39 PM
+-- Generation Time: Nov 29, 2018 at 01:40 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 5.6.37
 
@@ -41,12 +41,15 @@ CREATE TABLE `assign_seats` (
 
 INSERT INTO `assign_seats` (`seat_id`, `article`, `img_seat`, `seat_type`) VALUES
 (1, 'Articolo: Pullman 1\r\n                                <br> Fornitore : Colombo\r\n                                <br> Posti max : 35\r\n                                <br> Posti assegnati :20', 2, 1),
-(2, 'Articolo: Pullman 1 \r\nFornitore : Colombo \r\nPosti max : 35 \r\nPosti assegnati :13', 11, 1),
-(3, 'Articolo: Pullman 1 \r\nFornitore : Colombo \r\nPosti max : 35 \r\nPosti assegnati :5\r\n\r\n\r\n', 12, 1),
-(4, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 10 \r\nPosti assegnati :6', 7, 2),
-(5, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 6 \r\nPosti assegnati :4\r\n\r\n', 8, 2),
-(6, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 2 \r\nPosti assegnati :0', 9, 2),
-(7, 'Articolo: Stanza 1 \r\nFornitore : B&B \r\nPosti max : 2 \r\nPosti assegnati :2', 10, 2);
+(2, 'Articolo: Pullman 1\r\n                                <br> Fornitore : Colombo\r\n                                <br> Posti max : 35\r\n                                <br> Posti assegnati :13', 11, 1),
+(3, 'Articolo: Pullman 1\r\n                                <br> Fornitore : Colombo\r\n                                <br> Posti max : 35\r\n                                <br> Posti assegnati :5', 12, 1),
+(4, 'Articolo: Stanza 1\r\n                                <br> Fornitore : B&B\r\n                                <br> Posti max : 10\r\n                                <br> Posti assegnati :6', 7, 2),
+(5, 'Articolo: Stanza 1\r\n                                <br> Fornitore : B&B\r\n                                <br> Posti max : 2\r\n                                <br> Posti assegnati :0\r\n\r\n', 8, 2),
+(6, 'Articolo: Stanza 1\r\n                                <br> Fornitore : B&B\r\n                                <br> Posti max : 6\r\n                                <br> Posti assegnati :4\r\n\r\n', 9, 2),
+(7, 'Articolo: Stanza 1\r\n                                <br> Fornitore : B&B\r\n                                <br> Posti max : 2\r\n                                <br> Posti assegnati :0', 10, 2),
+(8, 'Articolo: Tavolo 1\r\n                                <br> Fornitore : Marina\r\n                                <br> Posti max : 10\r\n                                <br> Posti assegnati :6', 13, 3),
+(9, 'Articolo: Tavolo 1\r\n                                <br> Fornitore : Marina\r\n                                <br> Posti max : 10\r\n                                <br> Posti assegnati :3', 14, 3),
+(10, 'Articolo: Tavolo 1\r\n                                <br> Fornitore : Marina\r\n                                <br> Posti max : 4\r\n                                <br> Posti assegnati :4', 15, 3);
 
 -- --------------------------------------------------------
 
@@ -157,7 +160,10 @@ INSERT INTO `tbl_file_uploader` (`file_id`, `file_name`) VALUES
 (9, 'seat_3.JPG'),
 (10, 'seat_4.JPG'),
 (11, '35_20.JPG'),
-(12, '35_5.JPG');
+(12, '35_5.JPG'),
+(13, 'tavolo1.JPG'),
+(14, 'tavolo2.JPG'),
+(15, 'tavolo3.JPG');
 
 -- --------------------------------------------------------
 
@@ -334,7 +340,7 @@ ALTER TABLE `tbl_user_type`
 -- AUTO_INCREMENT for table `assign_seats`
 --
 ALTER TABLE `assign_seats`
-  MODIFY `seat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `seat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `supplier_detail`
@@ -352,7 +358,7 @@ ALTER TABLE `tbl_customer_list`
 -- AUTO_INCREMENT for table `tbl_file_uploader`
 --
 ALTER TABLE `tbl_file_uploader`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_suppliers_details`
