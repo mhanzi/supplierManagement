@@ -44,13 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li><a href="#">Page 1-3</a></li>
         </ul>
       </li>
-	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('suppliers/aggiungi_fornitore');?>">Aggiungi Fornitore <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="<?php echo site_url('suppliers/aggiungi_fornitore');?>">Aggiungi Fornitore </a></li>
-          <li><a href="<?php echo site_url('suppliers/');?>">Evento Tratta</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
+	
 	  
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo site_url('suppliers/assegna_posti');?>">Assegna Posti <span class="caret"></span></a>
         <ul class="dropdown-menu">

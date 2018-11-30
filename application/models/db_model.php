@@ -28,6 +28,54 @@ class db_model extends CI_Model
             return 0;
         }
     }
+	
+
+	public function get_SupplierDetails($id,$search)
+	{
+	 $sql = "SELECT * FROM supplier_detail 
+			 WHERE supplier_id= ".$id." AND  sup_tipologie LIKE '%".$search."%'
+		     OR sup_descrizione LIKE '%".$search."%' 
+		     OR sup_inizio LIKE '%".$search."%' 
+		     OR sup_fine LIKE '%".$search."%' 
+             OR sup_listino LIKE '%".$search."%'
+             OR sup_sconto LIKE '%".$search."%' 
+             OR sup_stato LIKE '%".$search."%' ";
+     $result = $this->db->query($sql);
+            if ($result->num_rows() >= 1) {
+            $data = $result->result_array();
+            return $data;
+            } else {
+			
+            return 0;
+        }
+    }
+	public function getSupplierDetails($id)
+	{
+	    $this->db->select('*');
+        $this->db->from('supplier_detail');
+        $this->db->where('supplier_id', $id);
+        $query = $this->db->get();
+        if ($query->num_rows() >= 1) {
+        return $query->result_array();
+	
+        } else {
+            return 0; 
+        }
+    }
+	public function getSuppliersDetails($id)
+	{
+	    $this->db->select('*');
+        $this->db->from('tbl_suppliers_details');
+        $this->db->where('tbl_sup_id', $id);
+        $query = $this->db->get();
+        if ($query->num_rows() >= 1) {
+		
+        return $query->result_array();
+	
+        } else {
+            return false; 
+        }
+    }
 	public function getalluserDetails()
 	{
 	    $this->db->select('*');
@@ -66,20 +114,7 @@ class db_model extends CI_Model
 	 	
 	}
 	
-	public function getSuppliersDetails($id)
-	{
-	    $this->db->select('*');
-        $this->db->from('tbl_suppliers_details');
-        $this->db->where('tbl_sup_id', $id);
-        $query = $this->db->get();
-        if ($query->num_rows() >= 1) {
-		
-        return $query->result_array();
 	
-        } else {
-            return false; 
-        }
-    }
 	public function getallDetails($id)
 	{
 	    $this->db->select('*');
@@ -95,20 +130,7 @@ class db_model extends CI_Model
         }
     }
 
-	public function getSupplierDetails($id)
-	{
-	    $this->db->select('*');
-        $this->db->from('supplier_detail');
-        $this->db->where('supplier_id', $id);
-        $query = $this->db->get();
-        if ($query->num_rows() >= 1) {
-//print_r( $query->result_array());
-        return $query->result_array();
-	
-        } else {
-            return false; 
-        }
-    }
+
 		public function get_seat_details($type)
 	{
 		$this->db->select('*');

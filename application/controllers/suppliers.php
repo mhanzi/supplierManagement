@@ -184,12 +184,62 @@ class suppliers extends CI_Controller {
     { 
 	//supplier details
         $agent= substr($var, 10);
-        $data['id']=$agent;
-        $data['supDetail']=$this->db_model->getSupplierDetails($agent);
+        $data['id']=$agent;       
         $data['supplier']=$this->db_model->getSuppliersDetails($agent);
         $this->load->view('header');
         $this->load->view('supplier_detail',$data);
         $this->load->view('footer');
+	}
+	
+	public function get_supplier_wise_details(){
+		$search = $this->input->post('query');
+		$agent = $this->input->post('id');
+		$supDetail=$this->db_model->get_SupplierDetails($agent,$search);
+		echo '<table class="table table-bordered">
+			  <thead id="rounded">
+			  <tr id="rounded">
+				<th id="rcornerl">Tipologie</th>
+				<th>Descrizione</th>
+				<th>Inizio</th>
+				<th>Fine</th>
+				<th>Listino</th>
+				<th>Sconto</th>
+				<th>&nbsp;  </th>
+				<th>Stato</th>
+				<th id="rcornerr">Azioni</th>
+			  </tr>
+			 </thead>
+			 <tbody>';
+	        if(isset($supDetail) && $supDetail!= 0){ 			 
+				foreach($supDetail as $supp){ 
+				  echo '<tr>
+					<td>'.$supp['sup_tipologie'].'</td>
+					<td>'.$supp['sup_descrizione'].'</td>
+					<td>'.$supp['sup_inizio'].'</td>
+					<td>'.$supp['sup_fine'].'</td>
+					<td>'.$supp['sup_listino'].'</td>
+					<td>'.$supp['sup_sconto'].'</td>
+					<td></td>
+					<td>'.$supp['sup_stato'].'</td>';
+					$length = 10;
+					$randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length); 
+					echo '<td><button type="button" name="'.$supp['detail_id'].'" id="viewButton" class="btn" onclick="viewButtonLists(this.name)">  Azioni Articolo  </button></br>
+				   <div id="idList'.$supp['detail_id'].'" style="display:none">
+							  <a href="'.site_url('suppliers/'.$supp['url_details'].'/'.$randomString.$supp['detail_id']).'"><span class="fa fa-file-text"> &nbsp;&nbsp; Dettagli </span></a>  </br>
+					 <a href="'.site_url('suppliers/aggiungi_fornitore/'.$randomString.$supp['detail_id']).'"><span class="glyphicon glyphicon-edit"> Modifica </span>  </br>
+					<span class="glyphicon glyphicon-retweet"> Traduci </span>  </br>
+					<span class="glyphicon glyphicon-eye-open"> Mostra/Nascondi </span>  </br>
+					<span class="glyphicon glyphicon-globe"> Pubblica </span>
+				  </div>
+				  </tr>';
+				}
+			}else{
+				echo '<tr>
+                       <td colspan="10">No results found.</td></tr>';
+			}
+			echo '</tbody>
+					</td>
+					</table>';	
 	}
 	
 	//modific articolo
