@@ -9,12 +9,24 @@ class db_model extends CI_Model
         $this->load->helper('date');
         
     }
-     public function getSuppliersData()
+     public function getSuppliersData($search)
     {
-        $this->db->select('*');
-        $query = $this->db->get('tbl_suppliers_details');
-	
-        return $query->result_array();
+     $sql = "SELECT * FROM tbl_suppliers_details 
+			 WHERE tbl_supplier_name LIKE '%".$search."%'
+		     OR descrizione LIKE '%".$search."%' 
+		     OR inizio_fornitura LIKE '%".$search."%' 
+		     OR fine_fornitura LIKE '%".$search."%' 
+             OR partita_IVA LIKE '%".$search."%'
+             OR tipologia LIKE '%".$search."%' 
+             OR stato LIKE '%".$search."%' ";
+     $result = $this->db->query($sql);
+            if ($result->num_rows() >= 1) {
+            $data = $result->result_array();
+            return $data;
+            } else {
+			
+            return 0;
+        }
     }
 	public function getalluserDetails()
 	{
