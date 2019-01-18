@@ -1,7 +1,8 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class db_model extends CI_Model
 {
-    function db_model()
+    public function construct()
+    //function db_model()
     {
         parent::__construct();
         $this->load->database();
